@@ -1,0 +1,9 @@
+
+lib/*
+/dist 
+.DS_Store
+Thumbs.db
+css/main.css
+css/main.css.map
+lib/package.json
+
