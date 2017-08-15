@@ -6,12 +6,15 @@ let areaArray = [];
 let areaObject = {};
 
 
-var fillareaArray = (data) => {
-  data.areas.forEach(function(element){
-    areaArray.push(element);
+function fillAreaArray (data) {
+    let keys = Object.keys(data);
+    keys.forEach((item)=> {
+      console.log("keys", keys);
+      data[item].firebaseID = item;
+      areaArray.push(data[item]);
   });
-};
-
+      console.log("areaArray:", areaArray);
+}
 
 areaObject.getAreaArray = () => {
 	return areaArray;

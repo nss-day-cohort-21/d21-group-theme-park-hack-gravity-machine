@@ -3,11 +3,15 @@
 let attractionsArray = [];
 let attractionsObject = {};
 
-var fillAttractionsArray = (data) => {
-  data.attractions.forEach(function(element){
-    attractionsArray.push(element);
+function fillAttractionsArray (data) {
+    let keys = Object.keys(data);
+    keys.forEach((item)=> {
+      console.log("keys", keys);
+      data[item].firebaseID = item;
+      attractionsArray.push(data[item]);
   });
-};
+      console.log("attracTypesArray:", attractionsArray);
+}
 
 attractionsObject.getAttractionsArray = () => {
 	return attractionsArray;
