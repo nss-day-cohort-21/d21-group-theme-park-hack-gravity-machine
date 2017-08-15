@@ -2,10 +2,11 @@
 console.log("Main.js");
 
 let Handlebars = require('hbsfy/runtime'),
-	jsonAquire = require('./loader.js');
+	areaAquire = require('./loader.js'),
+	attracAquire = require('./attracLoader.js');
 
-
-jsonAquire.loadAreaArray()
+// Area Promise
+areaAquire.loadAreaArray()
 .then(
 	(loadAreaResolve) => {
 		console.log("Area Promise", loadAreaResolve);
@@ -15,16 +16,18 @@ jsonAquire.loadAreaArray()
 		console.log("Something went wrong");
 	});
 
-// areaAquire.loadAttractionsArray()
-// .then(
-// 	(loadAttractionsResolve) => {
-// 		console.log("Area Promise", loadAttractionsResolve);
-// 		// areaToPage(loadAreaResolve);
-// 	},
-// 	(reject) => {
-// 		console.log("Something went wrong--loadAttractionsResolve");
-// 	});
 
+//Attraction Promise
+
+attracAquire.loadAttractionsArray()
+.then(
+	(loadAttractResolve) => {
+		console.log("Attraction Promise", loadAttractResolve);
+		// areaToPage(loadAreaResolve);
+	},
+	(reject) => {
+		console.log("Something went wrong");
+	});
 
 //Current Time
 
