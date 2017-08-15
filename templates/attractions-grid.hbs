@@ -1,0 +1,11 @@
+{{#each attractions}}
+
+	<section id="attraction--{{@index}}" class="lm-attraction">
+	<div class="attracName">{{name}}</div>
+	<div class="attracDescr">{{description}}</div>
+	{{#if times}}
+		<div class="attracTimes">{{times}}</div>
+	{{/if}}
+	</section>
+
+{{/each}}
