@@ -3,29 +3,30 @@ console.log("Main.js");
 
 let Handlebars = require('hbsfy/runtime'),
 
-	areaAquire = require('./loader.js'),
-	attracAquire = require('./attracLoader.js'),
-	attracTypeAquire = require('./attracTypesLoader.js'),
-	areaTemplate = require('../templates/areas-grid.hbs');
-	// parkInfoAquire = require('');
+    areaAquire = require('./loader.js'),
+    attracAquire = require('./attracLoader.js'),
+    attracTypeAquire = require('./attracTypesLoader.js'),
+    areaTemplate = require('../templates/areas-grid.hbs'),
+    searchAquire = require('./search.js');
+// parkInfoAquire = require('');
 
 
-function areasToPage(stuff){
-	let createDiv = document.createElement("div");
-	createDiv.innerHTML = areaTemplate(stuff);
-	$("#leftMenu").append(createDiv);
+function areasToPage(stuff) {
+    let createDiv = document.createElement("div");
+    createDiv.innerHTML = areaTemplate(stuff);
+    $("#leftMenu").append(createDiv);
 }
 
 // Area Promise
 areaAquire.loadAreaArray()
 
 .then(
-	(loadAreaResolve) => {
-		console.log("Area Promise", loadAreaResolve);
-	},
-	(reject) => {
-		console.log("Something went wrong");
-	});
+    (loadAreaResolve) => {
+        console.log("Area Promise", loadAreaResolve);
+    },
+    (reject) => {
+        console.log("Something went wrong");
+    });
 
 
 //Attraction Promise
