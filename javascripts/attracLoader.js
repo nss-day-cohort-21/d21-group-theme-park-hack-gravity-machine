@@ -6,7 +6,6 @@ let attractionsObject = {};
 function fillAttractionsArray (data) {
     let keys = Object.keys(data);
     keys.forEach((item)=> {
-      console.log("keys", keys);
       data[item].firebaseID = item;
       attractionsArray.push(data[item]);
   });
@@ -20,12 +19,11 @@ attractionsObject.getAttractionsArray = () => {
 attractionsObject.loadAttractionsArray =  () => {
   return new Promise( function (resolve, reject) {
     var attractionsLoader = new XMLHttpRequest();
-    attractionsLoader.open("GET", "https://theme-park-cfa10.firebaseio.com/theme-park.json");
+    attractionsLoader.open("GET", "https://theme-park-cfa10.firebaseio.com/attractions.json");
     attractionsLoader.send();
-
     attractionsLoader.addEventListener("load", function() {
       var data = JSON.parse(this.responseText);
-      resolve(data); // No longer responsible for calling populatePage function
+      resolve(data);
     });
   });
 };
