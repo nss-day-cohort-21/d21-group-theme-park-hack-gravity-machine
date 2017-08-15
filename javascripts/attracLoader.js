@@ -3,11 +3,15 @@
 let attractionsArray = [];
 let attractionsObject = {};
 
-var fillAttractionsArray = (data) => {
-  data.attractions.forEach(function(element){
-    attractionsArray.push(element);
+function fillAttractionsArray (data) {
+    let keys = Object.keys(data);
+    keys.forEach((item)=> {
+      console.log("keys", keys);
+      data[item].firebaseID = item;
+      attractionsArray.push(data[item]);
   });
-};
+      console.log("attracTypesArray:", attractionsArray);
+}
 
 attractionsObject.getAttractionsArray = () => {
 	return attractionsArray;
@@ -16,11 +20,11 @@ attractionsObject.getAttractionsArray = () => {
 attractionsObject.loadAttractionsArray =  () => {
   return new Promise( function (resolve, reject) {
     var attractionsLoader = new XMLHttpRequest();
-    attractionsLoader.open("GET", "theme-park.json");
+    attractionsLoader.open("GET", "https://theme-park-cfa10.firebaseio.com/theme-park.json");
     attractionsLoader.send();
 
     attractionsLoader.addEventListener("load", function() {
-      var data = JSON.parse(this.responseText).attractions;
+      var data = JSON.parse(this.responseText);
       resolve(data); // No longer responsible for calling populatePage function
     });
   });

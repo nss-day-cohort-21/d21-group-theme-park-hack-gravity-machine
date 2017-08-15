@@ -5,6 +5,7 @@ let Handlebars = require('hbsfy/runtime'),
 	areaAquire = require('./loader.js'),
 	attracAquire = require('./attracLoader.js'),
 	attracTypeAquire = require('./attracTypesLoader.js');
+	// parkInfoAquire = require('');
 
 // Area Promise
 areaAquire.loadAreaArray()
@@ -35,7 +36,7 @@ attracAquire.loadAttractionsArray()
 attracTypeAquire.loadAttracTypesArray()
 .then(
 	(loadAttracTypesResolve) => {
-		console.log("Attraction Promise", loadAttracTypesResolve);
+		console.log("Attraction Type Promise", loadAttracTypesResolve);
 		// areaToPage(loadAreaResolve);
 	},
 	(reject) => {
