@@ -1,0 +1,48 @@
+.navbar{
+	background-color: purple;
+	color: white;
+}
+
+input[type=checkbox], input[type=radio] {
+    margin: 13px 6px 0;
+    margin-top: 1px\9;
+    line-height: normal;
+}
+
+.input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+    margin-top: 16px;
+}
+
+#currentTime{
+margin: 20px 60px;
+}
+
+
+
+.leftPane {
+	background-color: teal;
+	color: white;
+	height: 800px;
+}
+.mapPane {
+	background-color: orange;
+	color: white;
+	height: 800px;
+}
+footer{
+	background-color: blue;
+	color: white;
+	width: 100%;
+	text-align: center;
+}
+
+.navbar{
+	margin-bottom: 0;
+}
+
+.middlePane{
+	margin-top: 0;
+}
