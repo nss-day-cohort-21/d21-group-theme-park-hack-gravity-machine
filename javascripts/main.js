@@ -7,10 +7,10 @@ let Handlebars = require('hbsfy/runtime'),
     attracTypeAquire = require('./attracTypesLoader.js'),
     areaTemplate = require('../templates/areas-grid.hbs'),
     searchAquire = require('./search.js'),
+    mapFeatures = require('./mapFunctions.js');
     inputSearch = require('../templates/inputSearch.hbs'),
     parkDataAquire = require('./parkDataArray.js');
 // parkInfoAquire = require('');
-
 
 function areasToPage(stuff) {
     let createDiv = document.createElement("div");
@@ -37,7 +37,6 @@ attracAquire.loadAttractionsArray()
     .then(
         (loadAttractResolve) => {
             console.log("Attraction Promise", loadAttractResolve);
-
         },
         (reject) => {
             console.log("Something went wrong");
