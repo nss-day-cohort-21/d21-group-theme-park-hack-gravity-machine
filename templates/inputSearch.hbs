@@ -1,0 +1,34 @@
+{{#each this}}
+
+
+<section id="search-results">
+<h3 class="name"><a href="">{{name}}</a></h3>
+<div class="location">{{areaName}}</div>
+<p class="description">{{description}}</p>
+{{#if times}}
+<div class="start-time">{{times}}</div>
+{{/if}}
+</section>
+
+{{/each}}
+
+
+{{!-- var quotations = [];
+
+$("#addquotation").click(function () {
+        debugger;
+        var data = {};
+        var itemname = $("#itemname").val();
+        var cost =parseFloat( $("#cost").val());
+        var notes = $("#notes").val();
+        var date = $("#date").val();
+
+
+        data.Item = itemname;
+        data.Cost = cost;
+        data.Notes = notes;
+        data.Date = date;
+
+        quotations.push(data);
+)};
+ --}}
