@@ -11,7 +11,7 @@ let Handlebars = require('hbsfy/runtime'),
 
 
 function areasToPage(stuff){
-	let createDiv = document.createElement("div");
+	let createDiv = document.createElement("section");
 	createDiv.innerHTML = areaTemplate(stuff);
 	$("#leftMenu").append(createDiv);
 }
@@ -22,6 +22,7 @@ areaAquire.loadAreaArray()
 .then(
 	(loadAreaResolve) => {
 		console.log("Area Promise", loadAreaResolve);
+		areasToPage(loadAreaResolve);
 	},
 	(reject) => {
 		console.log("Something went wrong");
@@ -34,7 +35,7 @@ attracAquire.loadAttractionsArray()
     .then(
         (loadAttractResolve) => {
             console.log("Attraction Promise", loadAttractResolve);
-            // areaToPage(loadAreaResolve);
+            
         },
         (reject) => {
             console.log("Something went wrong");
