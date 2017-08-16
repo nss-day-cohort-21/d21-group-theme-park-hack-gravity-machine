@@ -3,9 +3,11 @@
 console.log("search.js");
 
 
-// let Handlebars = require('hbsfy/runtime'),
-//     areaAquire = require('./loader.js'),
-//     attracAquire = require('./attracLoader.js');
+let Handlebars = require('hbsfy/runtime'),
+    parkDataAquire = require('./parkDataArray.js');
+
+let searchArray = parkDataAquire.getParkArray();
+console.log("Search Array", searchArray);
 
 //Get button and input area from DOM
 let submitBtn = document.getElementById("basic-addon1");
