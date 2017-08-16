@@ -21,7 +21,6 @@ margin: 20px 60px;
 }
 
 
-
 .leftPane {
 	background-color: teal;
 	color: white;
@@ -49,6 +48,114 @@ footer{
 .middlePane{
 	margin-top: 0;
 }
-.mapImageFull{
-	background-image: url("../images/mapBackground.jpg");
+/********************
+	Map Backgrounds
+*********************/
+.bg-map-frontier{
+	background-image: url("../images/DisneyMap_01.jpg");
+	width: 100%;
+	height: 100%;
+}
+.bg-map-liberty1{
+	background-image: url("../images/DisneyMap_02.jpg");
+}
+.bg-map-fantasy{
+	background-image: url("../images/DisneyMap_03.jpg");
+}
+.bg-map-liberty2{
+	background-image: url("../images/DisneyMap_04.jpg");
+}
+.bg-map-castle{
+	background-image: url("../images/DisneyMap_05.jpg");
+}
+.bg-map-tomorrow{
+	background-image: url("../images/DisneyMap_06.jpg");
+}
+.bg-map-adventure{
+	background-image: url("../images/DisneyMap_07.jpg");
+}
+.bg-map-mainStreet{
+	background-image: url("../images/DisneyMap_08.jpg");
+}
+/********************
+	Map Rollovers
+*********************/
+.ro-map-mainStreet{
+	background-image: url("../images/map-mainSt.png");
+	width: 270px;
+    height: 318px;
+    position: absolute;
+    top: 345px;
+    left: 363px;
+    opacity: 0;
+    z-index: -1;
+}
+.ro-map-adventureland{
+	background-image: url(../images/map-Adventurelnd.png);
+    width: 353px;
+    height: 345px;
+    position: absolute;
+    top: 317px;
+    left: 66px;
+    opacity: 0;
+    z-index: -1;
+}
+.ro-map-frontierland{
+	background-image: url("../images/map-frntlnd.png");
+	width: 293px;
+    height: 395px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: -1;
+}
+.ro-map-liberty{
+	background-image: url("../images/map-libertySq.png");
+	width: 399px;
+    height: 223px;
+    position: absolute;
+    top: 131px;
+    left: 216px;
+    opacity: 0;
+    z-index: -1;
+}
+.ro-map-fantasyland{
+	background-image: url("../images/map-fantasyland.png");
+	width: 366px;
+    height: 285px;
+    position: absolute;
+    top: 0;
+    left: 474px;
+    opacity: 0;
+    z-index: -1;
+}
+.ro-map-tomorrowland{
+	background-image: url("../images/map-tomorrowlnd.png");
+	width: 353px;
+    height: 345px;
+    position: absolute;
+    top: 209px;
+    left: 544px;
+    opacity: 0;
+    z-index: -1;
+}
+.ro-map-castle{
+	background-image: url("../images/map-CinCastle.png");
+	width: 93px;
+    height: 115px;
+    position: absolute;
+    top: 269px;
+    left: 435px;
+    opacity: 0;
+    z-index: -1;
+}
+/********************
+	Map Closeups
+*********************/
+.mapCloseupFront{
+	background-image: url("../images/map_Zoom_Frontier.jpg");
+    width: 900px;
+    height: 663px;
+    z-index: 1;
 }
