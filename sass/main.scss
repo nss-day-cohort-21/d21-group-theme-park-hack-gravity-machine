@@ -26,11 +26,14 @@ margin: 20px 60px;
 	background-color: teal;
 	color: white;
 	height: 800px;
+	overflow-y: scroll
 }
 .mapPane {
 	background-color: orange;
 	color: white;
 	height: 800px;
+	margin: 0;
+	padding: 0;
 }
 footer{
 	background-color: blue;
@@ -45,4 +48,7 @@ footer{
 
 .middlePane{
 	margin-top: 0;
+}
+.mapImageFull{
+	background-image: url("../images/mapBackground.jpg");
 }
