@@ -8,7 +8,7 @@ let Handlebars = require('hbsfy/runtime'),
     areaTemplate = require('../templates/areas-grid.hbs'),
     searchAquire = require('./search.js'),
     inputSearch = require('../templates/inputSearch.hbs'),
-    nameLoadAquire = require('./nameStringArray.js');
+    nameLoadAquire = require('./parkDataArray.js');
 // parkInfoAquire = require('');
 
 
