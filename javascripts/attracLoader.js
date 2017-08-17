@@ -1,17 +1,19 @@
 "use strict";
-console.log("attractionsLoader");
+//console.log("attractionsLoader");
 
 let attractionsArray = [];
 let attractionsObject = {};
 
 function fillAttractionsArray(data) {
     let keys = Object.keys(data);
+
     keys.forEach((item) => {
         data[item].firebaseID = item;
         attractionsArray.push(data[item]);
 
     });
     console.log("attracTypesArray:", attractionsArray);
+
 }
 
 attractionsObject.getAttractionsArray = () => {
@@ -31,4 +33,6 @@ attractionsObject.loadAttractionsArray = () => {
         });
     });
 };
+
 module.exports = attractionsObject;
+

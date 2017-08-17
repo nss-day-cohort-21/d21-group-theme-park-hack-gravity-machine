@@ -1,0 +1,14 @@
+{{each this}}
+
+
+<section id="search-results">
+<h3><a href="">{{name}}</a></h3>
+<div class="location">{{areaName}}</div>
+<p class="description">{{description}}</p>
+{{#if times}}
+<div class="start-time">{{times}}</div>
+{{/if}}
+</section>
+
+{{/each}}
+

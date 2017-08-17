@@ -3,7 +3,7 @@ console.log("main.js");
 
 let Handlebars = require('hbsfy/runtime'),
 	areaAquire = require('./areasLoader.js'),
-	attracAquire = require('./attractionsLoader.js'),
+	attracAquire = require('./attracLoader.js'),
 	attracTypeAquire = require('./typesLoader.js'),
 	areaTemplate = require('../templates/areas-grid.hbs'),
 	ridesTemplate = require('../templates/attraction-ridesEach.hbs'),
@@ -14,7 +14,11 @@ let Handlebars = require('hbsfy/runtime'),
 	animalsTemplate = require('../templates/attraction-animalsEach.hbs'),
 	gameTemplate = require('../templates/attraction-gameEach.hbs'),
 	eventsTemplate = require('../templates/attraction-specialEach.hbs'),
-	fuseSearch = require('fuse.js/dist/fuse.js');
+	fuseSearch = require('fuse.js/dist/fuse.js'),
+    spEventsAquire = require('./spEventLoader.js'),
+    gamesAquire = require('./gameLoader.js'),
+    animalsAquire = require('./animalsLoader.js');
+
 
 // ********************************
 //			AREAS
@@ -155,12 +159,12 @@ function animalsToPage(stuff) {
 
 }
 // Attraction Promise
-attracAquire.loadAttractionsArray()
+animalsAquire.loadAnimalsArray()
 
 .then(
 
-    (loadAttracResolve) => {
-        	animalsToPage(loadAttracResolve);
+    (loadAnimalsResolve) => {
+        	animalsToPage(loadAnimalsResolve);
 
     },
     (reject) => {
@@ -178,12 +182,12 @@ function gameToPage(stuff) {
 
 }
 // Attraction Promise
-attracAquire.loadAttractionsArray()
+gamesAquire.loadGamesArray()
 
 .then(
 
-    (loadAttracResolve) => {
-        	gameToPage(loadAttracResolve);
+    (loadGamesResolve) => {
+        	gameToPage(loadGamesResolve);
     },
     (reject) => {
         console.log("Something went wrong");
@@ -200,12 +204,12 @@ function eventToPage(stuff) {
 
 }
 // Attraction Promise
-attracAquire.loadAttractionsArray()
+spEventsAquire.loadspecialEventsArray()
 
 .then(
 
-    (loadAttracResolve) => {
-        	eventToPage(loadAttracResolve);
+    (loadspecialEventsResolve) => {
+        	eventToPage(loadspecialEventsResolve);
     },
     (reject) => {
         console.log("Something went wrong");
