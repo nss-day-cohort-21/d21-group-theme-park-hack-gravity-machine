@@ -3,6 +3,7 @@ console.log("main.js");
 
 let Handlebars = require('hbsfy/runtime'),
     areaAquire = require('./areasLoader.js'),
+    timeAquire = require('./timeLoader.js'),
     vendorAquire = require('./vendorLoader.js'),
     characterAquire = require('./characterLoader.js'),
     foodAquire = require('./foodLoader.js'),
@@ -16,6 +17,7 @@ let Handlebars = require('hbsfy/runtime'),
     showTemplate = require('../templates/attraction-showEach.hbs'),
     vendorTemplate = require('../templates/attraction-vendoEach.hbs'),
     characterTemplate = require('../templates/attraction-characterEach.hbs'),
+    timesTemplate = require('../templates/times.hbs'),
     animalsTemplate = require('../templates/attraction-animalsEach.hbs'),
     gameTemplate = require('../templates/attraction-gameEach.hbs'),
     eventsTemplate = require('../templates/attraction-specialEach.hbs'),
@@ -218,6 +220,34 @@ function toggleEvent() {
             console.log("Something went wrong");
         });
 }
+
+//********************************
+//Times
+//********************************* 
+
+
+function timesToPage(stuff) {
+    $("#leftMenu").append('<div id="rideRemove">' + timesTemplate(stuff) + '</div>');
+
+}
+// Attraction Promise
+timeAquire.loadtimeArray(5)
+
+.then(
+
+    (loadtimeResolve) => {
+        console.log("working on times data", loadtimeResolve);
+        timesToPage(loadtimeResolve);
+        timeAquire.loadtimeArray(8)
+            .then((resolve) => {
+                console.log("resolve log", resolve);
+                timesToPage(resolve);
+            });
+
+    },
+    (reject) => {
+        console.log("Something went wrong");
+    });
 
 
 // //Attraction Promise
