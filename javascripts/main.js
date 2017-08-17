@@ -3,7 +3,11 @@ console.log("main.js");
 
 let Handlebars = require('hbsfy/runtime'),
     areaAquire = require('./areasLoader.js'),
+    vendorAquire = require('./vendorLoader.js'),
+    characterAquire = require('./characterLoader.js'),
+    foodAquire = require('./foodLoader.js'),
     rideAquire = require('./rideLoader.js'),
+    showAquire = require('./showLoad.js'),
     attracAquire = require('./attracLoader.js'),
     attracTypeAquire = require('./typesLoader.js'),
     areaTemplate = require('../templates/areas-grid.hbs'),
@@ -71,12 +75,12 @@ function toggleFood() {
 
     }
     // Attraction Promise
-    attracAquire.loadAttractionsArray()
+    foodAquire.loadfoodArray()
 
     .then(
 
-        (loadAttracResolve) => {
-            foodToPage(loadAttracResolve);
+        (loadFoodResolve) => {
+            foodToPage(loadFoodResolve);
         },
         (reject) => {
             console.log("Something went wrong");
@@ -91,12 +95,12 @@ function toggleShows() {
 
     }
     // Attraction Promise
-    attracAquire.loadAttractionsArray()
+    showAquire.loadshowArray()
 
     .then(
 
-        (loadAttracResolve) => {
-            showToPage(loadAttracResolve);
+        (loadshowResolve) => {
+            showToPage(loadshowResolve);
         },
         (reject) => {
             console.log("Something went wrong");
@@ -112,12 +116,12 @@ function toggleVendor() {
 
     }
     // Attraction Promise
-    attracAquire.loadAttractionsArray()
+    vendorAquire.loadvendorArray()
 
     .then(
 
-        (loadAttracResolve) => {
-            vendorToPage(loadAttracResolve);
+        (loadvendorResolve) => {
+            vendorToPage(loadvendorResolve);
 
         },
         (reject) => {
