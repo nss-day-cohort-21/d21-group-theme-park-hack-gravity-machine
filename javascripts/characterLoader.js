@@ -32,4 +32,9 @@ characterObject.loadcharacterArray = () => {
     });
 };
 
+
+characterObject.characterArray = () => {
+    return characterArray;
+};
+
 module.exports = characterObject;

@@ -32,4 +32,8 @@ showObject.loadshowArray = () => {
     });
 };
 
+
+showObject.getshowArray = () => {
+    return showArray;
+};
 module.exports = showObject;
