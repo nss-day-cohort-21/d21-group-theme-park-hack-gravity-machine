@@ -9,6 +9,9 @@ let Handlebars = require('hbsfy/runtime'),
     foodAquire = require('./foodLoader.js'),
     rideAquire = require('./rideLoader.js'),
     showAquire = require('./showLoad.js'),
+    spEventsAquire = require('./spEventLoader.js'),
+    gamesAquire = require('./gameLoader.js'),
+    animalsAquire = require('./animalsLoader.js'),
     attracAquire = require('./attracLoader.js'),
     attracTypeAquire = require('./typesLoader.js'),
     areaTemplate = require('../templates/areas-grid.hbs'),
@@ -22,6 +25,8 @@ let Handlebars = require('hbsfy/runtime'),
     gameTemplate = require('../templates/attraction-gameEach.hbs'),
     eventsTemplate = require('../templates/attraction-specialEach.hbs'),
     fuseSearch = require('fuse.js/dist/fuse.js');
+
+
 
 
 
@@ -162,14 +167,16 @@ function toggleAnimals() {
     function animalsToPage(stuff) {
         $("#leftMenu").append('<div id="animRemove">' + animalsTemplate(stuff) + '</div>');
 
-    }
-    // Attraction Promise
-    attracAquire.loadAttractionsArray()
 
+}
+// Attraction Promise
+animalsAquire.loadAnimalsArray()
+  
     .then(
 
-        (loadAttracResolve) => {
-            animalsToPage(loadAttracResolve);
+
+    (loadAnimalsResolve) => {
+        	animalsToPage(loadAnimalsResolve);
 
         },
         (reject) => {
@@ -185,18 +192,22 @@ function toggleGames() {
     function gameToPage(stuff) {
         $("#leftMenu").append('<div id="gameRemove">' + gameTemplate(stuff) + '</div>');
 
-    }
-    // Attraction Promise
-    attracAquire.loadAttractionsArray()
 
+}
+
+// Attraction Promise
+gamesAquire.loadGamesArray()
+    
+  
     .then(
 
-        (loadAttracResolve) => {
-            gameToPage(loadAttracResolve);
-        },
-        (reject) => {
-            console.log("Something went wrong");
-        });
+    (loadGamesResolve) => {
+        	gameToPage(loadGamesResolve);
+    },
+    (reject) => {
+        console.log("Something went wrong");
+    });
+
 }
 
 
@@ -209,13 +220,14 @@ function toggleEvent() {
 
     }
     // Attraction Promise
-    attracAquire.loadAttractionsArray()
+    spEventsAquire.loadspecialEventsArray()
 
     .then(
 
-        (loadAttracResolve) => {
-            eventToPage(loadAttracResolve);
+        (loadspecialEventsResolve) => {
+            eventToPage(loadspecialEventsResolve);
         },
+
         (reject) => {
             console.log("Something went wrong");
         });
@@ -231,6 +243,7 @@ function timesToPage(stuff) {
 
 }
 // Attraction Promise
+
 timeAquire.loadtimeArray(5)
 
 .then(

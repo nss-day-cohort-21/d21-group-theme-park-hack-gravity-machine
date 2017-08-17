@@ -1,10 +1,13 @@
 "use strict";
+console.log("SEARCH.js");
+
+let Handlebars = require('hbsfy/runtime'),
+    areaAquire = require('./loader.js'),
+    attracAquire = require('./attracLoader.js'),
+    parkDataAquire = require('./parkDataArray.js');
 
 console.log("search.js");
 
-
-let Handlebars = require('hbsfy/runtime'),
-    parkDataAquire = require('./parkDataArray.js');
 
 let searchArray = parkDataAquire.getParkArray();
 console.log("Search Array", searchArray);
