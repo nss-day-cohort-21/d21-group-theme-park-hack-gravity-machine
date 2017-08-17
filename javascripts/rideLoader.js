@@ -6,12 +6,10 @@ let rideObject = {};
 
 function fillRideArray(data) {
     let keys = Object.keys(data);
-    console.log(data);
-    console.log(keys);
-    // keys.forEach((item) => {
-    //     data[item].firebaseID = item;
-    //     rideArray.push(data[item]);
-    // });
+    keys.forEach((item) => {
+        data[item].firebaseID = item;
+        rideArray.push(data[item]);
+    });
 
 }
 
