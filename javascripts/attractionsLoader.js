@@ -1,5 +1,5 @@
 "use strict";
-console.log("attractionsLoader");
+console.log("attractionsLoader.js");
 
 let attractionsArray = [];
 let attractionsObject = {};

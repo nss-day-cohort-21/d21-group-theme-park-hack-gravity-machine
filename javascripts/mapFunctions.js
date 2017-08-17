@@ -1,17 +1,22 @@
 "use strict";
+console.log("mapfunction");
+
 $(document).ready(function(){
 	console.log( "ready! To Rock" );
 	//mainstreet Full Map MouseEvents
 		$(".ro-map-mainStreet").mouseover(function(){
     	$(".ro-map-mainStreet").css("opacity", "1");
+    	
 	});
 		$(".ro-map-mainStreet").mouseout(function(){
     	$(".ro-map-mainStreet").css("opacity", "0");
+    	
 	});
 		$(".ro-map-mainStreet").mouseup(function(){
-			
+			$("#map-closeup").append("<div id='cUpId' class='mapCloseupMainSt' width='900' height='663'></div>");
+			$("#map-closeup").append('<button class="backArrow">BACK</button>');
+			$(".ro-map").css('visibility','hidden');
 		});
-
 
 		//Adventureland Full Map MouseEvents
 		$(".ro-map-adventureland").mouseover(function(){
@@ -21,7 +26,8 @@ $(document).ready(function(){
     	$(".ro-map-adventureland").css("opacity", "0");
 	});
 		$(".ro-map-adventureland").mouseup(function(){
-			console.log("Clicked");
+			$("#map-closeup").append("<div class='mapCloseupAdventure' width='900' height='663'></div>");
+			$(".ro-map").css('visibility','hidden');
 		});
 
 
@@ -34,6 +40,7 @@ $(document).ready(function(){
 	});
 		$(".ro-map-frontierland").mouseup(function(){
 			$("#map-closeup").append("<div class='mapCloseupFront' width='900' height='663'></div>");
+			$(".ro-map").css('visibility','hidden');
 		});
 
 
@@ -45,7 +52,8 @@ $(document).ready(function(){
     	$(".ro-map-liberty").css("opacity", "0");
 	});
 		$(".ro-map-liberty").mouseup(function(){
-			console.log("Clicked");
+			$("#map-closeup").append("<div class='mapCloseupLiberty' width='900' height='663'></div>");
+			$(".ro-map").css('visibility','hidden');
 		});
 
 
@@ -57,7 +65,8 @@ $(document).ready(function(){
     	$(".ro-map-fantasyland").css("opacity", "0");
 	});
 		$(".ro-map-fantasyland").mouseup(function(){
-			console.log("Clicked");
+			$("#map-closeup").append("<div class='mapCloseupFantasy' width='900' height='663'></div>");
+			$(".ro-map").css('visibility','hidden');
 		});
 
 
@@ -69,9 +78,9 @@ $(document).ready(function(){
     	$(".ro-map-tomorrowland").css("opacity", "0");
 	});
 		$(".ro-map-tomorrowland").mouseup(function(){
-			console.log("Clicked");
+			$("#map-closeup").append("<div class='mapCloseupTomorrow' width='900' height='663'></div>");
+			$(".ro-map").css('visibility','hidden');
 		});
-
 
 		//Castle Full Map MouseEvents
 		$(".ro-map-castle").mouseover(function(){
@@ -81,6 +90,7 @@ $(document).ready(function(){
     	$(".ro-map-castle").css("opacity", "0");
 	});
 		$(".ro-map-castle").mouseup(function(){
-			console.log("Clicked");
+			$("#map-closeup").append("<div class='mapCloseupCastle' width='900' height='663'></div>");
+			$(".ro-map").css('visibility','hidden');
 		});
 });
