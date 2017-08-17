@@ -1,5 +1,5 @@
 "use strict";
-console.log("attraction_types");
+console.log("attraction_types.js");
 
 let attracTypesArray = [];
 let attracTypesObject = {};
