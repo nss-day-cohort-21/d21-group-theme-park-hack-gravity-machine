@@ -24,7 +24,8 @@ let Handlebars = require('hbsfy/runtime'),
     animalsTemplate = require('../templates/attraction-animalsEach.hbs'),
     gameTemplate = require('../templates/attraction-gameEach.hbs'),
     eventsTemplate = require('../templates/attraction-specialEach.hbs'),
-    fuseSearch = require('fuse.js/dist/fuse.js');
+    fuseSearch = require('fuse.js/dist/fuse.js'),
+    momentTimeAquire = require('./momentTime.js');
 
 
 

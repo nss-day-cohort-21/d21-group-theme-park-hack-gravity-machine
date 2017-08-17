@@ -32,4 +32,8 @@ rideObject.loadRideArray = () => {
     });
 };
 
+rideObject.getRideArray = () => {
+    return rideArray;
+};
+
 module.exports = rideObject;

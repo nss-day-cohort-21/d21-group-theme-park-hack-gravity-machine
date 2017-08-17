@@ -3,7 +3,7 @@
 
 let timeArray = [];
 let timeObject = {};
-let timeObject2 = {};
+
 
 function filltimeArray(data) {
     let keys = Object.keys(data);
@@ -34,7 +34,10 @@ timeObject.loadtimeArray = (val) => {
     });
 };
 
-
+//function to export the array as returned data
+timeObject.gettimeArray = () => {
+    return timeArray;
+};
 
 
 module.exports = timeObject;

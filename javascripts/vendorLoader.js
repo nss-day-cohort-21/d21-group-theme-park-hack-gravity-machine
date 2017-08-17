@@ -32,4 +32,9 @@ vendorObject.loadvendorArray = () => {
     });
 };
 
+
+vendorObject.getvendorArray = () => {
+    return vendorArray;
+};
+
 module.exports = vendorObject;
