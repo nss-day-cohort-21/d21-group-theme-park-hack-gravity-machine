@@ -31,4 +31,9 @@ attractionsObject.loadAttractionsArray = () => {
         });
     });
 };
+
+attractionsObject.getattractionsArray = () => {
+    return attractionsArray;
+};
+
 module.exports = attractionsObject;

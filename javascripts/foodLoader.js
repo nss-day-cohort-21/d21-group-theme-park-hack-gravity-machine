@@ -34,6 +34,8 @@ foodObject.loadfoodArray = () => {
     });
 };
 
-module.exports = foodObject;
+foodObject.getfoodArray = () => {
+    return foodArray;
+};
 
-console.log(foodObject);
+module.exports = foodObject;
