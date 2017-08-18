@@ -34,5 +34,13 @@ attractionsObject.loadAttractionsArray = () => {
     });
 };
 
+<<<<<<< .merge_file_3kVAlb
 module.exports = attractionsObject;
 
+=======
+attractionsObject.getattractionsArray = () => {
+    return attractionsArray;
+};
+
+module.exports = attractionsObject;
+>>>>>>> .merge_file_yPl9Rv

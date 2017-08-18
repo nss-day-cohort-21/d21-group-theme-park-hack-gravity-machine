@@ -35,5 +35,8 @@ areaObject.loadAreaArray = () => {
     });
 };
 
+areaObject.getAreaArray = () => {
+    return areaArray;
+};
 
 module.exports = areaObject;

@@ -24,6 +24,7 @@ let Handlebars = require('hbsfy/runtime'),
     animalsTemplate = require('../templates/attraction-animalsEach.hbs'),
     gameTemplate = require('../templates/attraction-gameEach.hbs'),
     eventsTemplate = require('../templates/attraction-specialEach.hbs'),
+<<<<<<< HEAD
     areasTemplate = require('../templates/main-areas.hbs'),
     fuseSearch = require('fuse.js/dist/fuse.js'),
     mainStreetAquire = require('./mainStreetLoader'),
@@ -33,6 +34,10 @@ let Handlebars = require('hbsfy/runtime'),
     fantasyAquire = require('./fantasyLoader.js'),
     tomorrowAquire = require('./tomorrowLoader.js'),
     cinderellaAquire = require('./cindyLoader.js');
+=======
+    fuseSearch = require('fuse.js/dist/fuse.js'),
+    momentTimeAquire = require('./momentTime.js');
+>>>>>>> master
 
 
 
