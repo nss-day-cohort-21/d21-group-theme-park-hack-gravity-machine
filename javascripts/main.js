@@ -2,7 +2,7 @@
 console.log("main.js");
 
 let Handlebars = require('hbsfy/runtime'),
-    // areaAquire = require('./areasLoader.js'),
+    mapFunctions = require('./mapFunctions.js'),
     timeAquire = require('./timeLoader.js'),
     vendorAquire = require('./vendorLoader.js'),
     characterAquire = require('./characterLoader.js'),
@@ -14,6 +14,7 @@ let Handlebars = require('hbsfy/runtime'),
     animalsAquire = require('./animalsLoader.js'),
     attracAquire = require('./attracLoader.js'),
     attracTypeAquire = require('./typesLoader.js'),
+    timesAquire = require('./timesDropdown.js'),
     areaTemplate = require('../templates/areas-grid.hbs'),
     ridesTemplate = require('../templates/attraction-ridesEach.hbs'),
     foodTemplate = require('../templates/attraction-foodEach.hbs'),
@@ -24,7 +25,7 @@ let Handlebars = require('hbsfy/runtime'),
     animalsTemplate = require('../templates/attraction-animalsEach.hbs'),
     gameTemplate = require('../templates/attraction-gameEach.hbs'),
     eventsTemplate = require('../templates/attraction-specialEach.hbs'),
-    hoursTemplate = require('../templates/hoursTemplate.hbs');
+    hoursTemplate = require('../templates/hoursTemplate.hbs'),
     areasTemplate = require('../templates/main-areas.hbs'),
     mainStreetAquire = require('./mainStreetLoader'),
     frontierAquire = require('./frontierLoader.js'),
@@ -34,12 +35,8 @@ let Handlebars = require('hbsfy/runtime'),
     tomorrowAquire = require('./tomorrowLoader.js'),
     cinderellaAquire = require('./cindyLoader.js'),
     fuseSearch = require('fuse.js/dist/fuse.js'),
-    momentTimeAquire = require('./momentTime.js');
-
-
-
-
-
+    momentTimeAquire = require('./momentTime.js'),
+    ZoomLoaders = require('./momentTime.js');
 
 // ********************************
 //			AREAS
@@ -148,6 +145,7 @@ function toggleShows() {
 function toggleVendor() {
     function vendorToPage(stuff) {
         $("#leftMenu").append('<div id="vendRemove">' + vendorTemplate(stuff) + '</div>');
+        
     }
     // Attraction Promise
     vendorAquire.loadvendorArray()
@@ -288,162 +286,6 @@ timeAquire.loadtimeArray(5)
     (reject) => {
         console.log("Something went wrong");
     });
-
-
-// // ********************************
-// //       MAIN STREET LIST
-// // ********************************
-//function toggleGames() {
-    function mainStreetToPage(stuff) {
-        $("#leftMenu").append('<div id="MainStreet">' + areasTemplate(stuff) + '</div>');
-
-}
-
-// Attraction Promise
-mainStreetAquire.loadMainStreetArray()
-    
-  
-    .then(
-
-    (loadMainStreetResolve) => {
-            mainStreetToPage(loadMainStreetResolve);
-    },
-    (reject) => {
-        console.log("Something went wrong");
-    });
-
-// // ********************************
-// //       ADVENTURE LAND List
-// // ********************************
-//function toggleGames() {
-    function adventurelandToPage(stuff) {
-        $("#leftMenu").append('<div id="adventureland">' + areasTemplate(stuff) + '</div>');
-}
-
-// Attraction Promise
-adventureAquire.loadAdventureArray()
-    
-  
-    .then(
-
-    (loadAdventureResolve) => {
-            adventurelandToPage(loadAdventureResolve);
-    },
-    (reject) => {
-        console.log("Something went wrong");
-    });
-
-// // ********************************
-// //       LIBERTY SQUARE  List
-// // ********************************
-//function toggleGames() {
-    function libertySquareToPage(stuff) {
-        $("#leftMenu").append('<div id="libertysq">' + areasTemplate(stuff) + '</div>');
-}
-
-// Attraction Promise
-libertyAquire.loadLibertyArray()
-    
-  
-    .then(
-
-    (loadLibertyResolve) => {
-            libertySquareToPage(loadLibertyResolve);
-    },
-    (reject) => {
-        console.log("Something went wrong");
-    });
-
-
-// // ********************************
-// //       FRONTIERLAND LIST
-// // ********************************
-//function toggleGames() {
-    function frontierlandToPage(stuff) {
-        $("#leftMenu").append('<div id="frontierland">' + areasTemplate(stuff) + '</div>');
-}
-
-// Attraction Promise
-frontierAquire.loadFrontierArray()
-    
-  
-    .then(
-
-    (loadFrontierResolve) => {
-            frontierlandToPage(loadFrontierResolve);
-    },
-    (reject) => {
-        console.log("Something went wrong");
-    });
-
-// // ********************************
-// //       FANTASY LAND LIST
-// // ********************************
-//function toggleGames() {
-    function fantasylandToPage(stuff) {
-        $("#leftMenu").append('<div id="fantasyland">' + areasTemplate(stuff) + '</div>');
-}
-
-// Attraction Promise
-fantasyAquire.loadFantasyArray()
-    
-  
-    .then(
-
-    (loadFantasyResolve) => {
-            fantasylandToPage(loadFantasyResolve);
-    },
-    (reject) => {
-        console.log("Something went wrong");
-    });
-
-
-
-// // ********************************
-// //       TOMORROWLAND List
-// // ********************************
-//function toggleGames() {
-    function tomorrowlandToPage(stuff) {
-        $("#leftMenu").append('<div id="frontierland">' + areasTemplate(stuff) + '</div>');
-}
-
-// Attraction Promise
-tomorrowAquire.loadTomorrowArray()
-    
-  
-    .then(
-
-    (loadTomorrowResolve) => {
-           tomorrowlandToPage(loadTomorrowResolve);
-    },
-    (reject) => {
-        console.log("Something went wrong");
-    });
-
-
-
-// // ********************************
-// //     CINDERELLA'S CASTLE LIST
-// // ********************************
-//function toggleGames() {
-    function cindyToPage(stuff) {
-        $("#leftMenu").append('<div id="cindy">' + areasTemplate(stuff) + '</div>');
-
-}
-
-// Attraction Promise
-cinderellaAquire.loadCindyArray()
-    
-  
-    .then(
-
-    (loadCindyResolve) => {
-            cindyToPage(loadCindyResolve);
-    },
-    (reject) => {
-        console.log("Something went wrong");
-    });
-
 
 
 
