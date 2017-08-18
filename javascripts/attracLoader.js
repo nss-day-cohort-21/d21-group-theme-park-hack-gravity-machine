@@ -35,6 +35,7 @@ attractionsObject.loadAttractionsArray = () => {
 };
 
 
+
 attractionsObject.getattractionsArray = () => {
     return attractionsArray;
 };
