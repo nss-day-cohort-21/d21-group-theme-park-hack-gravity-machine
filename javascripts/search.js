@@ -1,55 +1,55 @@
-"use strict";
-console.log("SEARCH.js");
+// "use strict";
+// console.log("SEARCH.js");
 
-let Handlebars = require('hbsfy/runtime'),
-    areaAquire = require('./loader.js'),
-    attracAquire = require('./attracLoader.js'),
-    parkDataAquire = require('./parkDataArray.js');
+// let Handlebars = require('hbsfy/runtime'),
+//     areaAquire = require('./loader.js'),
+//     attracAquire = require('./attracLoader.js'),
+//     parkDataAquire = require('./parkDataArray.js');
 
-console.log("search.js");
-
-
-let searchArray = parkDataAquire.getParkArray();
-console.log("Search Array", searchArray);
-
-//Get button and input area from DOM
-let submitBtn = document.getElementById("basic-addon1");
-let inputArea = document.getElementById("input");
-
-//Button event listener
-submitBtn.addEventListener("click", submit);
-
-//Makes button pull input value
-// This Works
-function submit() {
-    event.preventDefault();
-    var userInput = inputArea.value;
-    console.log("user input: ", userInput);
-
-}
-
-//makes enter key pull input value
-//This works
-$("input").on("keydown", function search(e) {
-    if (e.keyCode == 13) {
-        //stops form submit button from refreshing page by default
-        event.preventDefault();
-        console.log("user input:", $(this).val());
-    }
-});
+// console.log("search.js");
 
 
-//WIP-not sure where this is at
-$("#data-panel").append(inputSearch());
+// let searchArray = parkDataAquire.getParkArray();
+// console.log("Search Array", searchArray);
 
-function populateSearchResults(stuff) {
-    let newDiv = document.createElement("div");
-    newDiv.innerHTML = inputSearch(stuff);
-    $("#search-results").append(newDiv);
-    console.log();
-}
+// //Get button and input area from DOM
+// let submitBtn = document.getElementById("basic-addon1");
+// let inputArea = document.getElementById("input");
+
+// //Button event listener
+// submitBtn.addEventListener("click", submit);
+
+// //Makes button pull input value
+// // This Works
+// function submit() {
+//     event.preventDefault();
+//     var userInput = inputArea.value;
+//     console.log("user input: ", userInput);
+
+// }
+
+// //makes enter key pull input value
+// //This works
+// $("input").on("keydown", function search(e) {
+//     if (e.keyCode == 13) {
+//         //stops form submit button from refreshing page by default
+//         event.preventDefault();
+//         console.log("user input:", $(this).val());
+//     }
+// });
 
 
-function inputSearch() {
+// //WIP-not sure where this is at
+// $("#data-panel").append(inputSearch());
 
-}
+// function populateSearchResults(stuff) {
+//     let newDiv = document.createElement("div");
+//     newDiv.innerHTML = inputSearch(stuff);
+//     $("#search-results").append(newDiv);
+//     console.log();
+// }
+
+
+// function inputSearch() {
+
+// }

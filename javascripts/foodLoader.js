@@ -6,8 +6,6 @@ let foodObject = {};
 
 function fillfoodArray(data) {
     let keys = Object.keys(data);
-    console.log(data);
-    console.log(keys);
     keys.forEach((item) => {
         data[item].firebaseID = item;
         foodArray.push(data[item]);
@@ -27,7 +25,6 @@ foodObject.loadfoodArray = () => {
         foodLoader.send();
         foodLoader.addEventListener("load", function() {
             var data = JSON.parse(this.responseText);
-            console.log(data);
             fillfoodArray(data);
             resolve(foodArray);
         });

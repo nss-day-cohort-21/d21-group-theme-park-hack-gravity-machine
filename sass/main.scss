@@ -254,3 +254,19 @@ footer {
     border: none;
     font-size: 13px;
 }
+.slideDown {
+    font-style: 1.4em;
+    text-decoration: none;
+    color: white,
+}
+.description {
+    font-style: .8em;
+    color: lightgrey;
+    display: none;
+}
+.pinsMainfullOff {
+  visibility: hidden;
+}
+.pinsMainfullOn {
+  visibility: visible;
+}
