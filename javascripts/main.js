@@ -3,6 +3,7 @@ console.log("main.js");
 
 let Handlebars = require('hbsfy/runtime'),
     // areaAquire = require('./areasLoader.js'),
+    mapFunctions = require('./mapFunctions.js'),
     timeAquire = require('./timeLoader.js'),
     vendorAquire = require('./vendorLoader.js'),
     characterAquire = require('./characterLoader.js'),
@@ -14,6 +15,7 @@ let Handlebars = require('hbsfy/runtime'),
     animalsAquire = require('./animalsLoader.js'),
     attracAquire = require('./attracLoader.js'),
     attracTypeAquire = require('./typesLoader.js'),
+    timesAquire = require('./timesDropdown.js'),
     areaTemplate = require('../templates/areas-grid.hbs'),
     ridesTemplate = require('../templates/attraction-ridesEach.hbs'),
     foodTemplate = require('../templates/attraction-foodEach.hbs'),
@@ -25,7 +27,19 @@ let Handlebars = require('hbsfy/runtime'),
     gameTemplate = require('../templates/attraction-gameEach.hbs'),
     eventsTemplate = require('../templates/attraction-specialEach.hbs'),
     momentTimeAquire = require('./momentTime.js'),
-    hoursTemplate = require('../templates/hoursTemplate.hbs');
+    hoursTemplate = require('../templates/hoursTemplate.hbs'),
+    hoursTemplate = require('../templates/hoursTemplate.hbs'),
+    areasTemplate = require('../templates/main-areas.hbs'),
+    mainStreetAquire = require('./mainStreetLoader'),
+    frontierAquire = require('./frontierLoader.js'),
+    adventureAquire = require('./adventurelandLoader.js'),
+    libertyAquire = require('./libertyLoader.js'),
+    fantasyAquire = require('./fantasyLoader.js'),
+    tomorrowAquire = require('./tomorrowLoader.js'),
+    cinderellaAquire = require('./cindyLoader.js'),
+    fuseSearch = require('fuse.js/dist/fuse.js'),
+    momentTimeAquire = require('./momentTime.js'),
+    ZoomLoaders = require('./momentTime.js');
 
 
 // ********************************
@@ -135,6 +149,7 @@ function toggleShows() {
 function toggleVendor() {
     function vendorToPage(stuff) {
         $("#leftMenu").append('<div id="vendRemove">' + vendorTemplate(stuff) + '</div>');
+
     }
     // Attraction Promise
     vendorAquire.loadvendorArray()
@@ -361,17 +376,6 @@ $('#chkEvnt').click(function() {
 //         $("#leftMenu").append('<div class="searchFind">' + eventsTemplate(stuff) + '</div>');
 
 //     }
-
-//Button event listener
-// submitBtn.addEventListener("click", submit);
-
-//Makes button pull input value
-// This Works
-// function submit() {
-//     event.preventDefault();
-//     var userInput = inputArea.value;
-//     console.log("user input: ", userInput);
-
 // }
 
 //makes enter key pull input value
@@ -443,6 +447,5 @@ var d = new Date();
 var strDate = d.getFullYear() + " " + (d.getMonth() + 1) + "/" + d.getDate();
 let currentDate = document.getElementById("yearDate");
 currentDate.innerHTML = strDate;
-
 
 
