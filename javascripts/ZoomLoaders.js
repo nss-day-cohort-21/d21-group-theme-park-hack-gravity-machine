@@ -1,8 +1,7 @@
 'use strict';
 console.log("ZoomLoader");
 
-let Handlebars = require('hbsfy/runtime'),
-    mainStreetAquire = require('./mainStreetLoader'),
+let mainStreetAquire = require('./mainStreetLoader'),
     frontierAquire = require('./frontierLoader.js'),
     adventureAquire = require('./adventurelandLoader.js'),
     libertyAquire = require('./libertyLoader.js'),
@@ -26,7 +25,6 @@ function toggleCindy() {
 
     }
  
-    }
     // Attraction Promise
     cinderellaAquire.loadCindyArray()
 

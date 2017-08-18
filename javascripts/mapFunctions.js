@@ -2,13 +2,8 @@
 console.log("mapfunction");
 
 // let Handlebars = require('hbsfy/runtime');
-// let mainStreetAquire = require('./mainStreetLoader'),
-//     frontierAquire = require('./frontierLoader.js'),
-//     adventureAquire = require('./adventurelandLoader.js'),
-//     libertyAquire = require('./libertyLoader.js'),
-//     fantasyAquire = require('./fantasyLoader.js'),
-//     tomorrowAquire = require('./tomorrowLoader.js'),
-//     cinderellaAquire = require('./cindyLoader.js');
+// let zoomAquire = require('./ZoomLoaders.js');
+
 
 
 $(document).ready(function(){
@@ -22,7 +17,7 @@ $(document).ready(function(){
     	
 	});
 		$(".ro-map-mainStreet").mouseup(function(){
-			toggleMainst();
+			// zoomAquire.toggleMainst();
 			// $("#map-closeup").append("<div id='cUpId' class='mapCloseupMainSt' width='900' height='663'></div>");
 			// $("#map-closeup").append('<button class="backArrow">BACK</button>');
 			// $(".ro-map").css('visibility','hidden');
@@ -36,7 +31,7 @@ $(document).ready(function(){
     	$(".ro-map-adventureland").css("opacity", "0");
 	});
 		$(".ro-map-adventureland").mouseup(function(){
-			toggleAdventure();
+			// zoomAquire.toggleAdventure();
 		// 	$("#map-closeup").append("<div class='mapCloseupAdventure' width='900' height='663'></div>");
 		// 	$(".ro-map").css('visibility','hidden');
 		});
@@ -50,7 +45,7 @@ $(document).ready(function(){
     	$(".ro-map-frontierland").css("opacity", "0");
 	});
 		$(".ro-map-frontierland").mouseup(function(){
-			toggleFronier();
+			// zoomAquire.toggleFronier();
 		// 	$("#map-closeup").append("<div class='mapCloseupFront' width='900' height='663'></div>");
 		// 	$(".ro-map").css('visibility','hidden');
 		});
@@ -64,7 +59,7 @@ $(document).ready(function(){
     	$(".ro-map-liberty").css("opacity", "0");
 	});
 		$(".ro-map-liberty").mouseup(function(){
-			toggleLiberty();
+			// zoomAquire.toggleLiberty();
 			// $("#map-closeup").append("<div class='mapCloseupLiberty' width='900' height='663'></div>");
 			// $(".ro-map").css('visibility','hidden');
 		});
@@ -78,7 +73,7 @@ $(document).ready(function(){
     	$(".ro-map-fantasyland").css("opacity", "0");
 	});
 		$(".ro-map-fantasyland").mouseup(function(){
-			toggleFantasy();
+			// zoomAquire.toggleFantasy();
 			// $("#map-closeup").append("<div class='mapCloseupFantasy' width='900' height='663'></div>");
 			// $(".ro-map").css('visibility','hidden');
 		});
@@ -92,7 +87,7 @@ $(document).ready(function(){
     	$(".ro-map-tomorrowland").css("opacity", "0");
 	});
 		$(".ro-map-tomorrowland").mouseup(function(){
-			toggleTomorrow();
+			// zoomAquire.toggleTomorrow();
 			// $("#map-closeup").append("<div class='mapCloseupTomorrow' width='900' height='663'></div>");
 			// $(".ro-map").css('visibility','hidden');
 		});
@@ -105,7 +100,7 @@ $(document).ready(function(){
     	$(".ro-map-castle").css("opacity", "0");
 	});
 		$(".ro-map-castle").mouseup(function(){
-			toggleCindy();
+			// zoomAquire. toggleCindy();
 			// $("#map-closeup").append("<div class='mapCloseupCastle' width='900' height='663'></div>");
 			// $(".ro-map").css('visibility','hidden');
 		});
