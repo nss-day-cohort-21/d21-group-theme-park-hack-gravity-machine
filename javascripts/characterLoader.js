@@ -25,7 +25,6 @@ characterObject.loadcharacterArray = () => {
         characterLoader.send();
         characterLoader.addEventListener("load", function() {
             var data = JSON.parse(this.responseText);
-            console.log(data);
             fillcharacterArray(data);
             resolve(characterArray);
         });
@@ -33,7 +32,7 @@ characterObject.loadcharacterArray = () => {
 };
 
 
-characterObject.characterArray = () => {
+characterObject.getcharacterArray = () => {
     return characterArray;
 };
 

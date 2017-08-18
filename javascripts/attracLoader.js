@@ -41,4 +41,3 @@ attractionsObject.getattractionsArray = () => {
 };
 
 module.exports = attractionsObject;
-

@@ -2,23 +2,28 @@
 
 console.log("attraction times dropdown functions!");
 
+let hoursTemplate = require('../templates/hoursTemplate.hbs'),
+	timeTemplate = require('./timesLoader.js');
+
+
+
 //When page loads, then events list from current time to one hour past.
 //When page loads, then events list in left 30% of screen.
 
 
-var btn9am = document.getElementById("9am").addEventListener("click", nineAM);
-var btn10am = document.getElementById("10am").addEventListener("click", tenAM);
-var btn11am = document.getElementById("11am").addEventListener("click", elevenAM);
-var btn12pm = document.getElementById("12pm").addEventListener("click", twelvePM);
-var btn1pm = document.getElementById("1pm").addEventListener("click", onePM);
-var btn2pm = document.getElementById("2pm").addEventListener("click", twoPM);
-var btn3pm = document.getElementById("3pm").addEventListener("click", threePM);
-var btn4pm = document.getElementById("4pm").addEventListener("click", fourPM);
-var btn5pm = document.getElementById("5pm").addEventListener("click", fivePM);
-var btn6pm = document.getElementById("6pm").addEventListener("click", sixPM);
-var btn7pm = document.getElementById("7pm").addEventListener("click", sevenPM);
-var btn8pm = document.getElementById("8pm").addEventListener("click", eightPM);
-var btn9pm = document.getElementById("9pm").addEventListener("click", ninePM);
+var btn9am = document.getElementById("9am").addEventListener("click", nineAM());
+var btn10am = document.getElementById("10am").addEventListener("click", tenAM());
+var btn11am = document.getElementById("11am").addEventListener("click", elevenAM());
+var btn12pm = document.getElementById("12pm").addEventListener("click", twelvePM());
+var btn1pm = document.getElementById("1pm").addEventListener("click", onePM());
+var btn2pm = document.getElementById("2pm").addEventListener("click", twoPM());
+var btn3pm = document.getElementById("3pm").addEventListener("click", threePM());
+var btn4pm = document.getElementById("4pm").addEventListener("click", fourPM());
+var btn5pm = document.getElementById("5pm").addEventListener("click", fivePM());
+var btn6pm = document.getElementById("6pm").addEventListener("click", sixPM());
+var btn7pm = document.getElementById("7pm").addEventListener("click", sevenPM());
+var btn8pm = document.getElementById("8pm").addEventListener("click", eightPM());
+var btn9pm = document.getElementById("9pm").addEventListener("click", ninePM());
 
 //Link up each hour in the dropdown to filter the events by time 
 
@@ -30,19 +35,66 @@ function nineAM() {
     $("#leftMenu").append(`<p class="nowShowing"> Today's events from 9:00am to 10:00am  </p>`);
     console.log("9am picked", nineAM);
 }
-
+function tenAM() {
+    $("#leftMenu").append(`<p class="nowShowing"> Today's events from 9:00am to 10:00am  </p>`);
+    console.log("9am picked", nineAM);
+}
+function elevenAM() {
+    $("#leftMenu").append(`<p class="nowShowing"> Today's events from 9:00am to 10:00am  </p>`);
+    console.log("9am picked", nineAM);
+}
+function twelvePM() {
+    $("#leftMenu").append(`<p class="nowShowing"> Today's events from 9:00am to 10:00am  </p>`);
+    console.log("9am picked", nineAM);
+}
+function onePM() {
+    $("#leftMenu").append(`<p class="nowShowing"> Today's events from 9:00am to 10:00am  </p>`);
+    console.log("9am picked", nineAM);
+}
+function twoPM() {
+    $("#leftMenu").append(`<p class="nowShowing"> Today's events from 9:00am to 10:00am  </p>`);
+    console.log("9am picked", nineAM);
+}
+function threePM() {
+    $("#leftMenu").append(`<p class="nowShowing"> Today's events from 9:00am to 10:00am  </p>`);
+    console.log("9am picked", nineAM);
+}
+function fourPM() {
+    $("#leftMenu").append(`<p class="nowShowing"> Today's events from 9:00am to 10:00am  </p>`);
+    console.log("9am picked", nineAM);
+}
+function fivePM() {
+    $("#leftMenu").append(`<p class="nowShowing"> Today's events from 9:00am to 10:00am  </p>`);
+    console.log("9am picked", nineAM);
+}
+function sixPM() {
+    $("#leftMenu").append(`<p class="nowShowing"> Today's events from 9:00am to 10:00am  </p>`);
+    console.log("9am picked", nineAM);
+}
+function sevenPM() {
+    $("#leftMenu").append(`<p class="nowShowing"> Today's events from 9:00am to 10:00am  </p>`);
+    console.log("9am picked", nineAM);
+}
+function eightPM() {
+    $("#leftMenu").append(`<p class="nowShowing"> Today's events from 9:00am to 10:00am  </p>`);
+    console.log("9am picked", nineAM);
+}
+function ninePM() {
+    $("#leftMenu").append(`<p class="nowShowing"> Today's events from 9:00am to 10:00am  </p>`);
+    console.log("9am picked", nineAM);
+}
 function toggleHourevents() {
     function hoursToPage(stuff) {
         $("#leftMenu").append('<div id="">' + hoursTemplate(stuff) + '</div>');
 
     }
     // Attraction Promise
-    attracAquire.loadAttractionsArray()
+    timeTemplate.loadtimeArray()
 
     .then(
 
-        (loadAttracResolve) => {
-            hoursToPage(loadAttracResolve);
+        (loadTimeResolve) => {
+            hoursToPage(loadTimeResolve);
 
         },
         (reject) => {
@@ -59,7 +111,7 @@ function formatTime(TIME) {
     hours = hours ? hours : 12; // the hour '0' should be '12'
     let time = "Now Showing " + hours + ":00" + ampm;
     return time;
-    console.log('show time:', time);
+    // console.log('show time:', time);
 }
 
 let dateTime = new Date();

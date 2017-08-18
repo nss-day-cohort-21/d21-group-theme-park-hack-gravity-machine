@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!--     <link href="css/lightbox.min.css" rel="stylesheet"> -->
-    <link href="css/main.css" rel="stylesheet">
+<!--     <link href="css/lightbox.min.css" rel="stylesheet"> -->
+    <link href="css/main.css" rel="stylesheet">    
 
 </head>
 
@@ -41,18 +41,10 @@
                 </div>
                 <div class="col-md-3">
                     <h3 id="currentTime"></h3>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <div class="row middlePane">
 
-        <div id="leftMenu" class="col-md-3 leftPane">
+                    <div class="dropdown">
 
-             <!-- //This will be the HOUR dropdown, and the current hour should be the default -->
-            <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="hourDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                
               </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                     <button id="9am" class="dropdown-item" type="button">9:00 am</button><br>
@@ -69,27 +61,36 @@
                     <button id="8pm" class="dropdown-item" type="button">8:00 pm</button><br>
                     <button id="9pm" class="dropdown-item" type="button">9:00 pm</button><br>
                     <button id="10pm" class="dropdown-item" type="button">10:00 pm</button><br>
-                </div> 
 
+                </div>
+             </div>
+                </div>
             </div>
+        </div>
+    </nav>
+    <div class="row middlePane">
 
+        <div id="leftMenu" class="col-md-3 leftPane">
+            <!-- //This will be the HOUR dropdown, and the current hour should be the default -->
         </div>
 
         <div class="col-md-9 mapPane">
             <iframe src="DisneyMap.html" width="900" height="663"></iframe>
         </div>
-    </div>
-
-    </div>
+       
+        </div>
+        </div>
 
 
     <footer>Hack Gravity Machine &copy; <span id="yearDate"></span></footer>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script
+      src="http://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src=" javascripts/lightbox.min.js "></script>
-    <script src="dist/app.js "></script>
     <script src="javascripts/timesDropdown.js"></script>
+    <script type="text/javascript" src="/dist/app.js"></script>
 </body>
 
 </html>

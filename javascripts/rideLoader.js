@@ -14,6 +14,7 @@ function fillRideArray(data) {
 }
 
 rideObject.getRideArray = () => {
+
     return rideArray;
 };
 
@@ -25,7 +26,6 @@ rideObject.loadRideArray = () => {
         rideLoader.send();
         rideLoader.addEventListener("load", function() {
             var data = JSON.parse(this.responseText);
-            console.log(data);
             fillRideArray(data);
             resolve(rideArray);
         });
