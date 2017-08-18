@@ -24,8 +24,15 @@ let Handlebars = require('hbsfy/runtime'),
     animalsTemplate = require('../templates/attraction-animalsEach.hbs'),
     gameTemplate = require('../templates/attraction-gameEach.hbs'),
     eventsTemplate = require('../templates/attraction-specialEach.hbs'),
+    areasTemplate = require('../templates/main-areas.hbs'),
     fuseSearch = require('fuse.js/dist/fuse.js'),
-    mainStreetAquire = require('./mainStreetLoader');
+    mainStreetAquire = require('./mainStreetLoader'),
+    frontierAquire = require('./frontierLoader.js'),
+    adventureAquire = require('./adventurelandLoader.js'),
+    libertyAquire = require('./libertyLoader.js'),
+    fantasyAquire = require('./fantasyLoader.js'),
+    tomorrowAquire = require('./tomorrowLoader.js'),
+    cinderellaAquire = require('./cindyLoader.js');
 
 
 
@@ -264,29 +271,160 @@ timeAquire.loadtimeArray(5)
     });
 
 
-// //Attraction Promise
+// // ********************************
+// //       MAIN STREET LIST
+// // ********************************
+//function toggleGames() {
+    function mainStreetToPage(stuff) {
+        $("#leftMenu").append('<div id="MainStreet">' + areasTemplate(stuff) + '</div>');
 
-// attracAquire.loadAttractionsArray()
-//     .then(
-//         (loadAttractResolve) => {
-//             console.log("Attraction Promise", loadAttractResolve);
-//         },
-//         (reject) => {
-//             console.log("Something went wrong");
-//         });
+}
 
-//Attraction Types Promise
+// Attraction Promise
+mainStreetAquire.loadMainStreetArray()
+    
+  
+    .then(
 
-// attracTypeAquire.loadAttracTypesArray()
+    (loadMainStreetResolve) => {
+            mainStreetToPage(loadMainStreetResolve);
+    },
+    (reject) => {
+        console.log("Something went wrong");
+    });
 
-// .then(
-//     (loadAttracTypesResolve) => {
-//         console.log("Attraction Type Promise", loadAttracTypesResolve);
+// // ********************************
+// //       ADVENTURE LAND List
+// // ********************************
+//function toggleGames() {
+    function adventurelandToPage(stuff) {
+        $("#leftMenu").append('<div id="adventureland">' + areasTemplate(stuff) + '</div>');
+}
 
-//     },
-//     (reject) => {
-//         console.log("Something went wrong");
-//     });
+// Attraction Promise
+adventureAquire.loadAdventureArray()
+    
+  
+    .then(
+
+    (loadAdventureResolve) => {
+            adventurelandToPage(loadAdventureResolve);
+    },
+    (reject) => {
+        console.log("Something went wrong");
+    });
+
+// // ********************************
+// //       LIBERTY SQUARE  List
+// // ********************************
+//function toggleGames() {
+    function libertySquareToPage(stuff) {
+        $("#leftMenu").append('<div id="libertysq">' + areasTemplate(stuff) + '</div>');
+}
+
+// Attraction Promise
+libertyAquire.loadLibertyArray()
+    
+  
+    .then(
+
+    (loadLibertyResolve) => {
+            libertySquareToPage(loadLibertyResolve);
+    },
+    (reject) => {
+        console.log("Something went wrong");
+    });
+
+
+// // ********************************
+// //       FRONTIERLAND LIST
+// // ********************************
+//function toggleGames() {
+    function frontierlandToPage(stuff) {
+        $("#leftMenu").append('<div id="frontierland">' + areasTemplate(stuff) + '</div>');
+}
+
+// Attraction Promise
+frontierAquire.loadFrontierArray()
+    
+  
+    .then(
+
+    (loadFrontierResolve) => {
+            frontierlandToPage(loadFrontierResolve);
+    },
+    (reject) => {
+        console.log("Something went wrong");
+    });
+
+// // ********************************
+// //       FANTASY LAND LIST
+// // ********************************
+//function toggleGames() {
+    function fantasylandToPage(stuff) {
+        $("#leftMenu").append('<div id="fantasyland">' + areasTemplate(stuff) + '</div>');
+}
+
+// Attraction Promise
+fantasyAquire.loadFantasyArray()
+    
+  
+    .then(
+
+    (loadFantasyResolve) => {
+            fantasylandToPage(loadFantasyResolve);
+    },
+    (reject) => {
+        console.log("Something went wrong");
+    });
+
+
+
+// // ********************************
+// //       TOMORROWLAND List
+// // ********************************
+//function toggleGames() {
+    function tomorrowlandToPage(stuff) {
+        $("#leftMenu").append('<div id="frontierland">' + areasTemplate(stuff) + '</div>');
+}
+
+// Attraction Promise
+tomorrowAquire.loadTomorrowArray()
+    
+  
+    .then(
+
+    (loadTomorrowResolve) => {
+           tomorrowlandToPage(loadTomorrowResolve);
+    },
+    (reject) => {
+        console.log("Something went wrong");
+    });
+
+
+
+// // ********************************
+// //     CINDERELLA'S CASTLE LIST
+// // ********************************
+//function toggleGames() {
+    function cindyToPage(stuff) {
+        $("#leftMenu").append('<div id="cindy">' + areasTemplate(stuff) + '</div>');
+
+}
+
+// Attraction Promise
+cinderellaAquire.loadCindyArray()
+    
+  
+    .then(
+
+    (loadCindyResolve) => {
+            cindyToPage(loadCindyResolve);
+    },
+    (reject) => {
+        console.log("Something went wrong");
+    });
+
 
 
 //************************

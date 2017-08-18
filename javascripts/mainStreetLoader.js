@@ -24,7 +24,7 @@ mainStreetObject.loadMainStreetArray = () => {
 	//let val = 8;
     return new Promise(function(resolve, reject) {
         var mainStreetLoader = new XMLHttpRequest();
-        mainStreetLoader.open("GET", `https://theme-park-cfa10.firebaseio.com/areas.json?orderBy="id"&equalTo=1`);
+        mainStreetLoader.open("GET", `https://theme-park-cfa10.firebaseio.com/attractions.json?orderBy="area_id"&equalTo=1`);
         mainStreetLoader.send();
         mainStreetLoader.addEventListener("load", function() {
             var data = JSON.parse(this.responseText);
