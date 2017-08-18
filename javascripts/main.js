@@ -2,7 +2,7 @@
 console.log("main.js");
 
 let Handlebars = require('hbsfy/runtime'),
-    areaAquire = require('./areasLoader.js'),
+    // areaAquire = require('./areasLoader.js'),
     timeAquire = require('./timeLoader.js'),
     vendorAquire = require('./vendorLoader.js'),
     characterAquire = require('./characterLoader.js'),
@@ -24,11 +24,8 @@ let Handlebars = require('hbsfy/runtime'),
     animalsTemplate = require('../templates/attraction-animalsEach.hbs'),
     gameTemplate = require('../templates/attraction-gameEach.hbs'),
     eventsTemplate = require('../templates/attraction-specialEach.hbs'),
-    fuseSearch = require('fuse.js/dist/fuse.js'),
-    momentTimeAquire = require('./momentTime.js');
-
-
-
+    momentTimeAquire = require('./momentTime.js'),
+    hoursTemplate = require('../templates/hoursTemplate.hbs');
 
 
 // ********************************
@@ -39,19 +36,34 @@ let Handlebars = require('hbsfy/runtime'),
 //     $("#leftMenu").append('<div id="testRemove">' + areaTemplate(stuff) + '</div>');
 // }
 // Area Promise
-areaAquire.loadAreaArray()
+// areaAquire.loadAreaArray()
 
-.then(
+// .then(
 
-    (loadAreaResolve) => {
-        console.log("Area Promise", loadAreaResolve);
-        // areasToPage(loadAreaResolve);
-    },
-    (reject) => {
-        console.log("Something went wrong");
-    });
+//     (loadAreaResolve) => {
+//         console.log("Area Promise", loadAreaResolve);
+//         // areasToPage(loadAreaResolve);
+//     },
+//     (reject) => {
+//         console.log("Something went wrong");
+//     });
 // }
 // toggleAreas();
+// function toggleOn() {
+//   $("#map-closeup").toggleClass("pinsMainfullOn");  
+// }
+// function toggleOff() {
+//   $("#map-closeup").toggleClass("pinsMainfullOff");  
+// }
+// ************************
+//      FlipDown
+// ************************
+ $(document).ready(function(){
+    $(".slideDown").click(function(){
+        $('.slideDown').parent().next(".description").slideToggle("slow");
+     });
+});
+
 // ********************************
 //			Rides
 // ********************************
@@ -60,6 +72,9 @@ function toggleRides() {
         $("#leftMenu").append('<div id="rideRemove">' + ridesTemplate(stuff) + '</div>');
 
     }
+        function toggleOn() {
+      $("#map-closeup").toggleClass("pinsMainfullOn");  
+    }
     // Attraction Promise
     rideAquire.loadRideArray()
 
@@ -67,7 +82,6 @@ function toggleRides() {
 
         (loadRideResolve) => {
             ridesToPage(loadRideResolve);
-            console.log("Ride Promise", loadRideResolve);
         },
         (reject) => {
             console.log("Something went wrong");
@@ -121,7 +135,6 @@ function toggleShows() {
 function toggleVendor() {
     function vendorToPage(stuff) {
         $("#leftMenu").append('<div id="vendRemove">' + vendorTemplate(stuff) + '</div>');
-
     }
     // Attraction Promise
     vendorAquire.loadvendorArray()
@@ -147,12 +160,12 @@ function toggleChar() {
 
     }
     // Attraction Promise
-    attracAquire.loadAttractionsArray()
+    characterAquire.loadcharacterArray()
 
     .then(
 
-        (loadAttracResolve) => {
-            characterToPage(loadAttracResolve);
+        (loadCharacterResolve) => {
+            characterToPage(loadCharacterResolve);
 
         },
         (reject) => {
@@ -240,7 +253,7 @@ function toggleEvent() {
 
 
 function timesToPage(stuff) {
-    $("#leftMenu").append('<div id="rideRemove">' + timesTemplate(stuff) + '</div>');
+    // $("#leftMenu").append('<div id="rideRemove">' + timesTemplate(stuff) + '</div>');
 
 }
 // Attraction Promise
@@ -263,32 +276,6 @@ timeAquire.loadtimeArray(5)
         console.log("Something went wrong");
     });
 
-
-// //Attraction Promise
-
-// attracAquire.loadAttractionsArray()
-//     .then(
-//         (loadAttractResolve) => {
-//             console.log("Attraction Promise", loadAttractResolve);
-//         },
-//         (reject) => {
-//             console.log("Something went wrong");
-//         });
-
-//Attraction Types Promise
-
-// attracTypeAquire.loadAttracTypesArray()
-
-// .then(
-//     (loadAttracTypesResolve) => {
-//         console.log("Attraction Type Promise", loadAttracTypesResolve);
-
-//     },
-//     (reject) => {
-//         console.log("Something went wrong");
-//     });
-
-
 //************************
 //		Checkboxes
 //************************
@@ -305,48 +292,61 @@ $('#chkFood').click(function() {
         toggleFood();
     } else if ($(this).prop("checked") === false) {
         $('#foodRemove').remove();
+        // toggleOff();
     }
 });
 $('#chkShow').click(function() {
     if ($(this).prop("checked") === true) {
         toggleShows();
+        // toggleOn();
     } else if ($(this).prop("checked") === false) {
         $('#showRemove').remove();
+        // toggleOff();
     }
 });
 $('#chkVend').click(function() {
     if ($(this).prop("checked") === true) {
         toggleVendor();
+        // toggleOn();
     } else if ($(this).prop("checked") === false) {
         $('#vendRemove').remove();
+        // toggleOff();
     }
 });
 $('#chkChar').click(function() {
     if ($(this).prop("checked") === true) {
         toggleChar();
+        // toggleOn();
     } else if ($(this).prop("checked") === false) {
         $('#charRemove').remove();
+        // toggleOff();
     }
 });
 $('#chkAnim').click(function() {
     if ($(this).prop("checked") === true) {
         toggleAnimals();
+        // toggleOn();
     } else if ($(this).prop("checked") === false) {
         $('#animRemove').remove();
+        // toggleOff();
     }
 });
 $('#chkGame').click(function() {
     if ($(this).prop("checked") === true) {
         toggleGames();
+        // toggleOn();
     } else if ($(this).prop("checked") === false) {
         $('#gameRemove').remove();
+        // toggleOff();
     }
 });
 $('#chkEvnt').click(function() {
     if ($(this).prop("checked") === true) {
         toggleEvent();
+        // toggleOn();
     } else if ($(this).prop("checked") === false) {
         $('#evenRemove').remove();
+        // toggleOff();
     }
 });
 
@@ -354,28 +354,67 @@ $('#chkEvnt').click(function() {
 //************************
 // 		Fuzzy Search
 //************************
+// let submitBtn = document.getElementById("basic-addon1");
+// let inputArea = document.getElementById("input");
+
+// function searchToPage(stuff) {
+//         $("#leftMenu").append('<div class="searchFind">' + eventsTemplate(stuff) + '</div>');
+
+//     }
+
+//Button event listener
+// submitBtn.addEventListener("click", submit);
+
+//Makes button pull input value
+// This Works
+// function submit() {
+//     event.preventDefault();
+//     var userInput = inputArea.value;
+//     console.log("user input: ", userInput);
+
+// }
+
+//makes enter key pull input value
+//This works
+// $("input").on("keyup", function search(e) {
+//     if (e.keyCode == 13) {
+//         //stops form submit button from refreshing page by default
+//         event.preventDefault();
+//         var userInput = $(this).val();
+
+//     }
+// });
+
+
 
 // attracAquire.loadAttractionsArray()
-
 // .then(
 
 //     (loadAttracResolve) => {
+//         console.log("Does this load", loadAttracResolve);
+//         let searchInput = $("#input").val();
 //         	var options = {
+//                 tokenize: true,
 // 			  shouldSort: true,
 // 			  threshold: 0.6,
 // 			  location: 0,
 // 			  distance: 100,
 // 			  maxPatternLength: 32,
 // 			  minMatchCharLength: 1,
-// 			  keys: ["name"]
-// 			};
-// 			var fuse = new Fuse(loadAttracResolve, options);
-// 			var result = fuse.search("");
+// 			  keys: ["name"]};
+// 			const fuse = new Fuse(loadAttracResolve, options);
+// 			var result = fuse.search(searchInput);
+//             searchToPage(result);
+//             console.log("result", result);
+//         result = [];
 //     },
+ 
+
+        
 //     (reject) => {
 //         console.log("Something went wrong");
 //     });
-// }
+
 
 
 
@@ -404,3 +443,6 @@ var d = new Date();
 var strDate = d.getFullYear() + " " + (d.getMonth() + 1) + "/" + d.getDate();
 let currentDate = document.getElementById("yearDate");
 currentDate.innerHTML = strDate;
+
+
+

@@ -25,7 +25,6 @@ showObject.loadshowArray = () => {
         showLoader.send();
         showLoader.addEventListener("load", function() {
             var data = JSON.parse(this.responseText);
-            console.log(data);
             fillshowArray(data);
             resolve(showArray);
         });

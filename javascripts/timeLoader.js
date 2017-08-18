@@ -14,9 +14,9 @@ function filltimeArray(data) {
 
 }
 
-timeObject.gettimeArray = () => {
-    return timeArray;
-};
+// timeObject.gettimeArray = () => {
+//     return timeArray;
+// };
 
 
 timeObject.loadtimeArray = (val) => {

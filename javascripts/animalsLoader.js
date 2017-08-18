@@ -6,14 +6,10 @@ let animalsObject = {};
 
 function fillAnimalsArray(data) {
     let keys = Object.keys(data);
-
     keys.forEach((item) => {
         data[item].firebaseID = item;
         animalsArray.push(data[item]);
-
     });
-    console.log("Animals Array:", animalsArray);
-
 }
 
 animalsObject.getAnimalsArray = () => {
@@ -21,10 +17,10 @@ animalsObject.getAnimalsArray = () => {
 };
 
 animalsObject.loadAnimalsArray = () => {
-	//let val = "6";
+	let val = "6";
     return new Promise(function(resolve, reject) {
         var animalsLoader = new XMLHttpRequest();
-        animalsLoader.open("GET", `https://theme-park-cfa10.firebaseio.com/attractions.json?orderBy="type_id"&equalTo=6`);
+        animalsLoader.open("GET", `https://theme-park-cfa10.firebaseio.com/attractions.json?orderBy="type_id"&equalTo=${val}`);
         animalsLoader.send();
         animalsLoader.addEventListener("load", function() {
             var data = JSON.parse(this.responseText);
