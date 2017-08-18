@@ -2,6 +2,7 @@
 console.log("main.js");
 
 let Handlebars = require('hbsfy/runtime'),
+    // areaAquire = require('./areasLoader.js'),
     mapFunctions = require('./mapFunctions.js'),
     timeAquire = require('./timeLoader.js'),
     vendorAquire = require('./vendorLoader.js'),
@@ -25,6 +26,8 @@ let Handlebars = require('hbsfy/runtime'),
     animalsTemplate = require('../templates/attraction-animalsEach.hbs'),
     gameTemplate = require('../templates/attraction-gameEach.hbs'),
     eventsTemplate = require('../templates/attraction-specialEach.hbs'),
+    momentTimeAquire = require('./momentTime.js'),
+    hoursTemplate = require('../templates/hoursTemplate.hbs'),
     hoursTemplate = require('../templates/hoursTemplate.hbs'),
     areasTemplate = require('../templates/main-areas.hbs'),
     mainStreetAquire = require('./mainStreetLoader'),
@@ -37,6 +40,7 @@ let Handlebars = require('hbsfy/runtime'),
     fuseSearch = require('fuse.js/dist/fuse.js'),
     momentTimeAquire = require('./momentTime.js'),
     ZoomLoaders = require('./momentTime.js');
+
 
 // ********************************
 //			AREAS
@@ -145,7 +149,7 @@ function toggleShows() {
 function toggleVendor() {
     function vendorToPage(stuff) {
         $("#leftMenu").append('<div id="vendRemove">' + vendorTemplate(stuff) + '</div>');
-        
+
     }
     // Attraction Promise
     vendorAquire.loadvendorArray()
@@ -287,8 +291,6 @@ timeAquire.loadtimeArray(5)
         console.log("Something went wrong");
     });
 
-
-
 //************************
 //		Checkboxes
 //************************
@@ -374,17 +376,6 @@ $('#chkEvnt').click(function() {
 //         $("#leftMenu").append('<div class="searchFind">' + eventsTemplate(stuff) + '</div>');
 
 //     }
-
-//Button event listener
-// submitBtn.addEventListener("click", submit);
-
-//Makes button pull input value
-// This Works
-// function submit() {
-//     event.preventDefault();
-//     var userInput = inputArea.value;
-//     console.log("user input: ", userInput);
-
 // }
 
 //makes enter key pull input value
@@ -456,4 +447,5 @@ var d = new Date();
 var strDate = d.getFullYear() + " " + (d.getMonth() + 1) + "/" + d.getDate();
 let currentDate = document.getElementById("yearDate");
 currentDate.innerHTML = strDate;
+
 
